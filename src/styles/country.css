@@ -1,0 +1,307 @@
+.country-hub {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  color: var(--text-main);
+}
+
+.indonesia-hub {
+  background-image: url('https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=1800');
+}
+
+.country-overlay,
+.detail-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at center, rgba(255,255,255,0.06), transparent 45%),
+    linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.92));
+}
+
+.country-hero-content {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  padding: 120px 6vw 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.eyebrow {
+  color: var(--text-muted);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.country-hero-content h1,
+.detail-hero-content h1,
+.page-title-section h1,
+.thoughts-hero h1 {
+  font-size: clamp(56px, 9vw, 128px);
+  line-height: 0.95;
+  margin: 0;
+  color: var(--text-main);
+}
+
+.country-subtitle,
+.detail-hero-content p,
+.page-title-section p,
+.thoughts-hero p {
+  max-width: 760px;
+  margin-top: 28px;
+  font-size: 20px;
+  line-height: 1.8;
+  color: var(--text-muted);
+}
+
+.detail-page {
+  min-height: 100vh;
+  background: #050505;
+  color: var(--text-main);
+}
+
+.detail-hero {
+  position: relative;
+  min-height: 72vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 6vw 90px;
+}
+
+.indonesia-overview-hero {
+  background-image: url('https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=1800');
+}
+
+.bali-hero {
+  background-image: url('https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=1800');
+}
+
+.detail-hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.info-section {
+  padding: 90px 6vw;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 36px;
+}
+
+.map-card,
+.info-card,
+.video-card,
+.guide-card,
+.featured-experience,
+.masonry-card,
+.blog-card {
+  border-radius: 32px;
+  border: 1px solid var(--border-soft);
+  background: var(--bg-card);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.36);
+}
+
+.map-card {
+  overflow: hidden;
+  min-height: 460px;
+}
+
+.map-card iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  filter: grayscale(0.3) contrast(0.9);
+}
+
+.info-card {
+  padding: 40px;
+}
+
+.info-card h2,
+.video-section h2,
+.gallery-section h2,
+.blog-section h2 {
+  font-size: 36px;
+  margin-bottom: 28px;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.info-row span {
+  color: var(--text-muted);
+}
+
+.info-row strong {
+  text-align: right;
+}
+
+.info-text {
+  margin-top: 28px;
+  color: var(--text-muted);
+  line-height: 1.9;
+}
+
+.video-section,
+.gallery-section,
+.blog-section {
+  padding: 40px 6vw 90px;
+}
+
+.video-card {
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+}
+
+.video-card iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr 1fr;
+  gap: 22px;
+}
+
+.image-grid img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 30px;
+  filter: brightness(0.86);
+}
+
+.page-title-section {
+  padding: 150px 6vw 70px;
+}
+
+.city-grid,
+.blog-grid,
+.guide-layout {
+  padding: 0 6vw 100px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.city-card {
+  position: relative;
+  min-height: 520px;
+  border-radius: 34px;
+  overflow: hidden;
+  cursor: pointer;
+  background: #111;
+}
+
+.city-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+  transition: transform 0.45s ease;
+}
+
+.city-card:hover img {
+  transform: scale(1.08);
+}
+
+.city-card-mask {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 35%, rgba(0,0,0,0.82));
+}
+
+.city-card-content {
+  position: absolute;
+  z-index: 1;
+  left: 28px;
+  right: 28px;
+  bottom: 32px;
+}
+
+.city-card-content h2 {
+  font-size: 36px;
+  margin-bottom: 12px;
+}
+
+.city-card-content p {
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.blog-card {
+  overflow: hidden;
+}
+
+.blog-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+.blog-card div {
+  padding: 26px;
+}
+
+.blog-tag {
+  display: inline-block;
+  margin-bottom: 14px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: rgba(243, 238, 215, 0.1);
+  color: var(--accent);
+  font-size: 13px;
+}
+
+.guide-card {
+  padding: 34px;
+}
+
+.guide-card.large {
+  grid-column: span 2;
+}
+
+.guide-card h2 {
+  font-size: 30px;
+  margin-bottom: 16px;
+}
+
+.guide-card li,
+.guide-card p {
+  color: var(--text-muted);
+  line-height: 1.9;
+}
+
+@media (max-width: 900px) {
+  .info-section,
+  .city-grid,
+  .blog-grid,
+  .guide-layout,
+  .image-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .guide-card.large {
+    grid-column: span 1;
+  }
+
+  .map-card {
+    min-height: 340px;
+  }
+}

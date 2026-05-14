@@ -1,0 +1,539 @@
+{
+  "common": {
+    "back": "Back",
+    "viewMap": "View Map",
+    "viewVisa": "Visa Details",
+    "listenPhrases": "Listen & Learn",
+    "close": "Close",
+    "prev": "Previous",
+    "next": "Next",
+    "more": "Learn More",
+    "viewMore": "View More",
+    "loading": "Loading",
+    "noData": "No content yet",
+    "play": "Play",
+    "pause": "Pause"
+  },
+  "nav": {
+    "home": "Home",
+    "gallery": "Gallery",
+    "countries": "Countries",
+    "team": "Team",
+    "donate": "Support Us",
+    "about": "About"
+  },
+  "home": {
+    "exploreCountries": "Explore Countries",
+    "title": "Discover the most\nfascinating nations"
+  },
+  "countryHub-Indonisia": {
+    "name":"Indonesia",
+    "eyebrow": "Culture Journey",
+    "intro": "Between volcanoes, islands, temples, and everyday street life, explore a cultural world woven from a thousand islands.This is far more than a mere travel destination; it is a collection of cultural vignettes capturing nature, faith, migration and modern life.",
+    "route": {
+      "country": "Country",
+      "countryDesc": "Geography, language, and stories",
+      "cities": "Cities",
+      "citiesDesc": "Food, culture, and places",
+      "thoughts": "Thoughts",
+      "thoughtsDesc": "Experiences and social topics",
+      "guide": "Travel Guide",
+      "guideDesc": "Practical tips to take along"
+    }
+  },
+  "overview-Indonisia": {
+    "eyebrow": "Country Overview",
+    "title": "Country Impression",
+    "subtitle": "Read a cultural world of a thousand islands, between volcanoes, temples, and everyday life.",
+    "basicInfo": "Basic Information",
+    "about": "About the Country",
+    "video": "Video Introduction",
+    "gallery": "Gallery",
+    "labels": {
+      "name": "Country",
+      "location": "Location",
+      "visa": "Visa",
+      "language": "Language"
+    },
+    "categories-Indonisia": {
+      "culture": "Culture",
+      "landscape": "Landscape",
+      "food": "Food",
+      "festival": "Festival"
+    }
+  },
+  "indonesia": {
+    "name": "Indonesia",
+    "englishName": "Indonesia",
+    "locationShort": "Southeast Asia · Equatorial Archipelago",
+    "locationDetail": "Located between Southeast Asia and Oceania, consisting of over 17,000 islands straddling the equator.",
+    "visaShort": "Visa on Arrival / e-VOA",
+    "languageShort": "Bahasa Indonesia",
+    "intro": "Indonesia is not a single landmass, but an archipelago connected by the sea. From port cities to volcanic villages, from mosques to Hindu temples, its culture is continually shaped by migration, trade, colonial history, and urbanization."
+  },
+  "hero": {
+    "title": "Culture Bistro",
+    "subtitle": "Culture · Food · Events · Travel Guide",
+    "searchPlaceholder": "Search countries...",
+    "searchAriaLabel": "Search countries",
+    "join": "Join",
+    "unsupportedVideo": "Your browser does not support video playback."
+  },
+  
+  "activity": {
+    "sectionEyebrow": "— Activities",
+    "titleLine1": "Shared Moments",
+    "titleLine2": "and Real Voices",
+    "description": {
+      "line1": "We run freely under the sun, feeling the wind, warmth, and openness;",
+      "line2": "we also gather in corner cafés, exchanging stories and perspectives with people from around the world.",
+      "line3": "Here, every meeting is more than a brief escape or moment of relaxation;",
+      "line4": "it is a warm and honest conversation that breaks boundaries."
+    },
+    "status": {
+      "upcoming": "Upcoming",
+      "upcomingNew": "Upcoming NEW",
+      "past": "Past Event"
+    },
+    "actions": {
+      "detailsAndReserve": "Details / Reserve",
+      "review": "View Highlights"
+    },
+    "highlightsTitle": "Highlights",
+    "testimonialsEyebrow": "— Participants Say",
+    "items": {
+      "monsoon-desert": {
+        "name": "People in the Monsoon and Desert",
+        "date": "June 10, 2026",
+        "location": "Café",
+        "description": "Listen to their stories and discover the real Indonesia and Yemen beyond travel images.",
+        "highlights": [
+          "Explore youth issues across cultures",
+          "Handmade food workshop",
+          "Niche travel tips sharing"
+        ]
+      },
+      "campus-cultural-exchange": {
+        "name": "Campus Cultural Exchange",
+        "date": "April 1, 2026",
+        "location": "Nanjing University of Science and Technology",
+        "description": "An introduction to the history and culture of Morocco and Germany for students from different countries.",
+        "highlights": [
+          "Breaking stereotypes about Germany",
+          "Learning simple German phrases",
+          "Experiencing Moroccan henna",
+          "Moroccan mint tea mini game",
+          "Playing music and singing together"
+        ]
+      },
+      "indoor-english-corner": {
+        "name": "Indoor English Corner",
+        "date": "April 15, 2026",
+        "location": "Nanjing University of Science and Technology",
+        "description": "An indoor English corner where participants shared their favorite films.",
+        "highlights": [
+          "A Russian student shared an animated film",
+          "Open conversations",
+          "Movie recommendation exchange",
+          "English speaking practice"
+        ]
+      },
+      "outdoor-group-games": {
+        "name": "Outdoor Group Games",
+        "date": "April 25, 2026",
+        "location": "Zhongshan Sports Park, Nanjing",
+        "description": "Light outdoor activities under the sun, designed for full relaxation of body and mind.",
+        "highlights": [
+          "Ping-pong ball chopstick challenge",
+          "Group shuttlecock kicking game",
+          "Casual talks and experience sharing",
+          "Guitar playing and singing"
+        ]
+      }
+    },
+    "articles": {
+      "monsoon-desert": [
+        {
+          "type": "paragraph",
+          "content": "This sharing session is about monsoons, deserts, and people. Young speakers from different cultural backgrounds will share stories about growth, migration, food, and everyday life."
+        },
+        {
+          "type": "paragraph",
+          "content": "The event hopes to reveal a world beyond travel photos: a world of ordinary people, difficulties, humor, intimacy, and everyday wisdom."
+        }
+      ],
+      "campus-cultural-exchange": [
+        {
+          "type": "paragraph",
+          "content": "This campus cultural exchange focused on Morocco and Germany. Through historical introductions, language activities, hands-on experiences, and music sharing, participants rediscovered two countries that are often simplified by stereotypes."
+        },
+        {
+          "type": "image",
+          "src": "/pictures/activity1-1.jpg",
+          "caption": "A cultural introduction session during the event"
+        },
+        {
+          "type": "paragraph",
+          "content": "We explored cultural differences in a relaxed way and helped students from different countries build real connections through games and conversations."
+        }
+      ],
+      "indoor-english-corner": [
+        {
+          "type": "paragraph",
+          "content": "This English corner centered on films. Participants shared their favorite movies, animations, and characters while practicing English in a relaxed atmosphere."
+        },
+        {
+          "type": "image",
+          "src": "/pictures/activity2-1.jpg",
+          "caption": "Sharing moments at the indoor English corner"
+        }
+      ],
+      "outdoor-group-games": [
+        {
+          "type": "paragraph",
+          "content": "At Zhongshan Sports Park, we organized a relaxed outdoor group activity. The event was not about winning or losing, but about slowing down in the sun, on the grass, and through laughter."
+        },
+        {
+          "type": "image",
+          "src": "/pictures/activity3-1.jpg",
+          "caption": "Outdoor games and conversations"
+        },
+        {
+          "type": "paragraph",
+          "content": "After the games, participants sat together, talked, played guitar, sang songs, and shared their experiences of living in the city."
+        }
+      ]
+    },
+    "testimonials": {
+      "zhang-ming": {
+        "name": "Zhang Ming",
+        "role": "Participant, Class of 2024",
+        "text": "This event completely changed how I understand cultural exchange. Through conversations and games, I realized that culture is not distant knowledge, but real people and real stories."
+      },
+      "li-yutong": {
+        "name": "Li Yutong",
+        "role": "Participant, Class of 2023",
+        "text": "The event helped me make friends from around the world. We talked, shared food, discussed films, and understood each other’s differences in a relaxed atmosphere."
+      }
+    }
+  },
+  
+  "countries": {
+    "sectionEyebrow": "— Explore Countries",
+    "titleLine1": "Discover the world's",
+    "titleLine2": "most fascinating nations",
+    "otherCard": {
+      "title": "Others",
+      "subtitle": "Explore more countries"
+    },
+    "modalTitle": "More Countries",
+    "pagination": "Page {{current}} / {{total}}",
+    "goToPage": "Go to page {{page}}",
+    "items": {
+      "morocco": {
+        "name": "Morocco",
+        "description": "From the Sahara Desert to the blue town of Chefchaouen, Morocco is a kaleidoscope of color and culture."
+      },
+      "egypt": {
+        "name": "Egypt",
+        "description": "A land of pyramids and the Nile, where thousands of years of civilization have left an enduring mark."
+      },
+      "indonesia": {
+        "name": "Indonesia",
+        "description": "A nation of thousands of islands, where nature and faith intertwine from Bali's terraces to Komodo's dragons."
+      },
+      "germany": {
+        "name": "Germany",
+        "description": "Castles, beer, and cutting-edge technology coexist, blending precision and romance in a unique way."
+      },
+      "yemen": {
+        "name": "Yemen",
+        "description": "A hidden gem of the Arabian Peninsula, known for ancient mudbrick towers and the surreal plants of Socotra."
+      },
+      "greece": {
+        "name": "Greece",
+        "description": "A blue-and-white world by the Aegean Sea, and the cradle of Western civilization."
+      },
+      "italy": {
+        "name": "Italy",
+        "description": "The birthplace of the Renaissance, and a paradise of food, art, and timeless beauty."
+      },
+      "spain": {
+        "name": "Spain",
+        "description": "Flamenco, Gaudí's architecture, and the passionate spirit of the Iberian Peninsula."
+      },
+      "turkey": {
+        "name": "Turkey",
+        "description": "A crossroads of civilizations between Europe and Asia, where hot air balloons and mosques create unforgettable scenes."
+      },
+      "japan": {
+        "name": "Japan",
+        "description": "A striking collision of tradition and modernity, shaped by cherry blossoms, temples, and neon cities."
+      },
+      "thailand": {
+        "name": "Thailand",
+        "description": "The Land of Smiles, where temples, beaches, and street food come together beautifully."
+      }
+    }
+  },
+  
+  "routeMap": {
+    "items": {
+      "overview": {
+        "label": "Country",
+        "desc": "Geography, language, and national stories"
+      },
+      "cities": {
+        "label": "Cities",
+        "desc": "Food, culture, and places"
+      },
+      "thoughts": {
+        "label": "Thoughts",
+        "desc": "Personal experiences and social issues"
+      },
+      "travelGuide": {
+        "label": "Travel Guide",
+        "desc": "Practical guides for countries and cities"
+      }
+    }
+  },
+  
+  "thoughts": {
+    "eyebrow": "Crossing Thoughts",
+    "title": "Thought Encounters",
+    "subtitle": "Travel is not only about taking photos, arriving, and checking in; it is also a way to understand ourselves through unfamiliar cultures.",
+    "featured": {
+      "tag": "Personal Experience",
+      "title": "Beside a Morning Ritual in Bali",
+      "text": "I thought I was only an observer. But when I raised my camera, I realized that the distance between me and the local people had changed. In that moment, travel was no longer just about watching; it became a lesson about boundaries, respect, and understanding."
+    },
+    "discussionTitle": "Social Topics",
+    "enterDiscussion": "Join Discussion →",
+    "topics": {
+      "cultural-boundary": {
+        "tag": "Cultural Boundaries",
+        "title": "When tourists watch a ritual, is it respect or disturbance?",
+        "text": "When a religious ritual enters a tourist's camera frame, is it still part of local life, or has it become a consumed spectacle?"
+      },
+      "travel-gaze": {
+        "tag": "Travel Gaze",
+        "title": "Why do we keep searching for something “authentic”?",
+        "text": "So-called authentic culture may not be a frozen tradition, but a relationship that constantly changes within modern life."
+      },
+      "urban-life": {
+        "tag": "Urban Life",
+        "title": "Does tourism make a city more open, or more expensive?",
+        "text": "The travel economy brings income, but it may also reshape rents, consumption patterns, and the rhythm of local communities."
+      },
+      "media-impact": {
+        "tag": "Media Influence",
+        "title": "How do short videos reshape destinations?",
+        "text": "A place may become popular because of a single video, but it may also lose its everyday order because of overexposure."
+      }
+    }
+  },
+  
+  "citiesPage": {
+    "eyebrow": "Cities",
+    "title": "Enter the Cities",
+    "subtitle": "Every city is a way of life. Together, they form Indonesia’s complex and fascinating cultural landscape.",
+    "items": {
+      "bali": {
+        "name": "Bali",
+        "description": "A space where islands, temples, rituals, and resort culture intertwine."
+      },
+      "jakarta": {
+        "name": "Jakarta",
+        "description": "A meeting point of modern urban life, commercial spaces, and diverse communities."
+      },
+      "yogyakarta": {
+        "name": "Yogyakarta",
+        "description": "An important city of Javanese culture, traditional arts, and heritage memory."
+      }
+    }
+  },
+
+
+  "travelGuide": {
+    "heroImageAlt": "Indonesia travel guide",
+    "heroEyebrow": "Travel Guide",
+    "heroTitleLine1": "Indonesia",
+    "heroTitleLine2": "Travel Guide",
+    "heroSubtitle": "Save cultural insights, route planning, and practical information in one place. This page currently works as a static travel guide and can later expand into a filterable, saveable, and downloadable trip planning tool.",
+    "actions": {
+      "startPlanning": "Start Planning",
+      "saveGuide": "Save Guide"
+    },
+    "overview": {
+      "destinationType": {
+        "label": "Destination Type",
+        "value": "Archipelago"
+      },
+      "languages": {
+        "label": "Common Languages",
+        "value": "Indonesian / English"
+      },
+      "themes": {
+        "label": "Best For",
+        "value": "Islands / Culture / Cities"
+      },
+      "travelStyle": {
+        "label": "Travel Style",
+        "value": "Independent / In-depth"
+      }
+    },
+    "nationalGuide": {
+      "eyebrow": "National Guide",
+      "title": "Country Guide",
+      "description": "This section works as a pre-departure overview checklist, helping travelers quickly understand the most basic and easily overlooked preparations for traveling in Indonesia.",
+      "items": {
+        "entryPreparation": {
+          "title": "Entry and Departure Preparation",
+          "text": "Prepare your passport, visa, flight tickets, accommodation confirmations, insurance, and backup copies of important documents before departure."
+        },
+        "bestSeason": {
+          "title": "Best Travel Season",
+          "text": "Indonesia has a tropical climate overall. Before traveling, adjust your route according to the rainy season, dry season, and your destination cities."
+        },
+        "transportation": {
+          "title": "Inter-island and City Transport",
+          "text": "As a country made up of many islands, common transport options include flights, ferries, private cars, motorbikes, ride-hailing services, and urban public transport."
+        },
+        "budget": {
+          "title": "Budget and Spending",
+          "text": "Both backpacking and resort-style trips can be planned. Your budget should consider accommodation, inter-island transport, food, tickets, and local experiences."
+        },
+        "safetyHealth": {
+          "title": "Safety and Health",
+          "text": "Pay attention to food hygiene, traffic safety, risks from sea activities, mosquito protection, and personal belongings. It is also helpful to learn about local medical resources in advance."
+        },
+        "etiquette": {
+          "title": "Cultural Etiquette",
+          "text": "When entering religious sites, pay attention to clothing and photography etiquette. Respect local rituals, private space, and religious customs in different regions."
+        }
+      }
+    },
+    "cityGuide": {
+      "eyebrow": "City Guide",
+      "title": "City Guide",
+      "viewCityGuide": "View City Guide →",
+      "items": {
+        "bali": {
+          "city": "Bali",
+          "tags": ["Island", "Temples", "Resort", "Rituals"],
+          "text": "Ideal for island vacations, temple visits, traditional dance, rice terrace walks, and short cultural experiences."
+        },
+        "jakarta": {
+          "city": "Jakarta",
+          "tags": ["Urban", "Business", "Museums", "Modern Life"],
+          "text": "Ideal for observing modern Indonesian city life, commercial spaces, historic districts, and diverse population flows."
+        },
+        "yogyakarta": {
+          "city": "Yogyakarta",
+          "tags": ["Heritage", "Art", "Javanese Culture", "Slow Travel"],
+          "text": "Ideal for exploring Borobudur, Prambanan, traditional arts, crafts, and Javanese culture."
+        }
+      }
+    },
+    "routeIdeas": {
+      "eyebrow": "Route Ideas",
+      "title": "Route Ideas",
+      "items": {
+        "islandRelax": {
+          "title": "Relaxed Island Route",
+          "duration": "5 - 7 days",
+          "text": "Center your trip around Bali, with beaches, temples, rice terraces, cafés, and one or two short nature experiences."
+        },
+        "cultureObservation": {
+          "title": "Cultural Observation Route",
+          "duration": "7 - 10 days",
+          "text": "Combine Jakarta and Yogyakarta to understand Indonesia's layered culture through urban life, museums, heritage sites, and traditional arts."
+        },
+        "islandHopping": {
+          "title": "Inter-island Exploration Route",
+          "duration": "10+ days",
+          "text": "Suitable for travelers with more time, allowing richer movement between Bali, Java, and surrounding islands."
+        }
+      }
+    },
+    "packingList": {
+      "eyebrow": "Packing List",
+      "title": "Packing List",
+      "items": {
+        "passportCopies": "Passport and document copies",
+        "adapterPowerBank": "Power adapter and power bank",
+        "lightClothes": "Light and breathable clothing",
+        "sunProtection": "Sun protection items",
+        "mosquitoRepellent": "Mosquito repellent",
+        "medicine": "Common medicine",
+        "rainGear": "Rain gear or light raincoat",
+        "templeClothes": "Long pants or a shawl for temple visits"
+      }
+    },
+    "toolkit": {
+      "eyebrow": "Travel Toolkit",
+      "title": "Expandable Travel Tools",
+      "description": "This page can first work as a static guide. In the next stage, it can add filters, saving features, city detail pages, PDF downloads, route generators, and even automatic itinerary combinations based on trip length.",
+      "tools": {
+        "photoSpots": "Photo Spots",
+        "foodMap": "Food Map",
+        "culturalEtiquette": "Cultural Etiquette",
+        "downloadGuide": "Download Guide"
+      }
+    }
+  },
+  
+  "cityDetail": {
+    "eyebrow": "City Story",
+    "subtitle": "Between streets, food, rituals, and landmarks, observe how local life meets travelers’ imagination.",
+    "basicInfoTitle": "City Information",
+    "labels": {
+      "localLanguage": "Local Languages",
+      "keywords": "City Keywords"
+    },
+    "videoTitle": "Video Introduction",
+    "videoNotConfigured": "Video source is not configured",
+    "playVideo": "Play {{city}} video",
+    "videoCoverAlt": "{{city}} video cover",
+    "blogTitle": "City Blog",
+    "items": {
+      "bali": {
+        "name": "Bali",
+        "localLanguage": "Indonesian, along with Balinese and other local languages.",
+        "keywords": "Island, temples, rituals, rice terraces, resorts, traditional arts.",
+        "description": "{{city}} is not only a travel destination, but also a real living space for local people. Through food, culture, and places, we see not only scenery, but also the long relationship between people and place."
+      },
+      "jakarta": {
+        "name": "Jakarta",
+        "localLanguage": "Indonesian, along with Javanese, Sundanese, and other local languages.",
+        "keywords": "Capital city, business, neighborhoods, museums, modern life, diverse communities.",
+        "description": "{{city}} is an important entry point for understanding modern Indonesia. Skyscrapers, shopping malls, old districts, markets, and community life come together, revealing the complexity of a country in urban transformation."
+      },
+      "yogyakarta": {
+        "name": "Yogyakarta",
+        "localLanguage": "Indonesian, along with Javanese and other local languages.",
+        "keywords": "Heritage, art, Javanese culture, crafts, slow travel, university town.",
+        "description": "{{city}} carries a strong Javanese cultural atmosphere. Heritage sites, crafts, street art, and everyday life are interwoven here, making it a place to slowly observe how culture continues today."
+      }
+    },
+    "blogs": {
+      "food": {
+        "tag": "Food",
+        "title": "Understanding a City Through a Local Meal",
+        "text": "Spices, rice, street stalls, and family flavors together shape the taste memories of travel."
+      },
+      "culture": {
+        "tag": "Culture",
+        "title": "Ritual Is Not Performance, but Everyday Life",
+        "text": "In temples, neighborhoods, and family spaces, we observe how culture enters daily life."
+      },
+      "places": {
+        "tag": "Places",
+        "title": "The City Stories Behind the Scenery",
+        "text": "Landmarks are more than check-in spots; they are entrances to history, belief, and local memory."
+      }
+    }
+  }
+
+}
+

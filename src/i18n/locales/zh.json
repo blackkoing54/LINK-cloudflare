@@ -1,0 +1,548 @@
+{
+  "common": {
+    "back": "返回",
+    "viewMap": "查看地图",
+    "viewVisa": "查看签证说明",
+    "listenPhrases": "听听常用语",
+    "close": "关闭",
+    "prev": "上一张",
+    "next": "下一张",
+    "more": "了解更多",
+    "viewMore": "查看更多",
+    "loading": "加载中",
+    "noData": "暂无内容",
+    "play": "播放",
+    "pause": "暂停"
+  },
+  "nav": {
+    "home": "首页",
+    "gallery": "图集",
+    "countries": "国家",
+    "team": "团队",
+    "donate": "支持我们"
+  },
+  "home": {
+    "exploreCountries": "探索国家",
+    "title": "探索世界各地\n最迷人的国度"
+  },
+  "countryHub-Indonisia": {
+    "name":"印度尼西亚",
+    "eyebrow": "Culture Journey",
+    "intro": "在火山、海岛、庙宇与市井烟火之间，探索一个由千岛组成的文化世界。这里不是单一的旅行目的地，而是一组关于自然、信仰、迁徙与现代生活的文化切片",
+    "route": {
+      "country": "国家",
+      "countryDesc": "地理、语言与国家故事",
+      "cities": "城市",
+      "citiesDesc": "美食、文化与景点观察",
+      "thoughts": "思想碰撞",
+      "thoughtsDesc": "个人经历与社会议题",
+      "guide": "旅行攻略",
+      "guideDesc": "打包收藏实用指南"
+    }
+  },
+  "overview-Indonisia": {
+    "eyebrow": "Country Overview",
+    "title": "国家印象",
+    "subtitle": "在火山、海岛、庙宇与市井烟火之间，阅读一个由千岛组成的文化世界。",
+    "basicInfo": "国家基本信息",
+    "about": "国家简介",
+    "video": "视频介绍",
+    "gallery": "图片展示",
+    "labels": {
+      "name": "国家名称",
+      "location": "地理位置",
+      "visa": "签证要求",
+      "language": "官方语言"
+    },
+    "categories-Indonisia": {
+      "culture": "人文",
+      "landscape": "地理",
+      "food": "美食",
+      "festival": "节日"
+    }
+  },
+  "indonesia": {
+    "name": "印度尼西亚",
+    "englishName": "Indonesia",
+    "locationShort": "东南亚 · 赤道群岛国家",
+    "locationDetail": "位于东南亚与大洋洲之间，由 17000 多个岛屿组成，横跨赤道。",
+    "visaShort": "落地签 / 电子落地签",
+    "languageShort": "印度尼西亚语",
+    "intro": "印度尼西亚不是一块单一的陆地，而是一片由海洋连接的群岛。从城市港口到火山村落，从清真寺到印度教庙宇，它的文化在迁徙、贸易、殖民历史和现代城市化中不断生成。"
+  },
+  "hero": {
+    "title": "Culture Bistro",
+    "subtitle": "文化 · 美食 · 活动 · 攻略",
+    "searchPlaceholder": "搜索国家...",
+    "searchAriaLabel": "搜索国家",
+    "join": "加入我们",
+    "unsupportedVideo": "您的浏览器不支持视频播放。"
+  },
+  "activity": {
+    "sectionEyebrow": "— 活动展示",
+    "titleLine1": "精彩瞬间",
+    "titleLine2": "与真实声音",
+    "description": {
+      "line1": "我们在阳光下肆意奔跑，感受风的自由与温度；",
+      "line2": "也在街角咖啡馆里齐聚，与世界各地的灵魂交换故事与观点。",
+      "line3": "在这里，每一次相会都不只是一场短暂的抽离与放松，",
+      "line4": "更是一次打破边界、充满温度的真实对话。"
+    },
+    "status": {
+      "upcoming": "即将开展",
+      "upcomingNew": "即将开展 NEW",
+      "past": "往期活动"
+    },
+    "actions": {
+      "detailsAndReserve": "了解详情 / 预约报名",
+      "review": "回顾精彩"
+    },
+    "highlightsTitle": "活动亮点",
+    "testimonialsEyebrow": "— 参与者说",
+    "items": {
+      "monsoon-desert": {
+        "name": "季风和沙漠里的人",
+        "date": "2026年6月10日",
+        "location": "咖啡馆",
+        "description": "听他们的故事，了解旅行镜头以外的真实印尼和也门",
+        "highlights": [
+          "了解异国青年议题",
+          "手工美食制作",
+          "小众旅行攻略分享"
+        ]
+      },
+      "campus-cultural-exchange": {
+        "name": "校内文化交流活动",
+        "date": "2026年4月1日",
+        "location": "南京理工大学",
+        "description": "向校内各国同学介绍了摩洛哥和德国两个国家的历史与文化",
+        "highlights": [
+          "打破关于德国的刻板印象",
+          "一起学习简单的德语",
+          "体验摩洛哥海娜",
+          "摩洛哥薄荷茶小游戏",
+          "一起弹琴唱歌"
+        ]
+      },
+      "indoor-english-corner": {
+        "name": "室内英语角",
+        "date": "2026年4月15日",
+        "location": "南京理工大学",
+        "description": "室内英语角，分享大家喜欢的电影",
+        "highlights": [
+          "来自俄罗斯的同学分享动画电影",
+          "自由畅聊",
+          "交换电影推荐",
+          "练习英语表达"
+        ]
+      },
+      "outdoor-group-games": {
+        "name": "户外团体游戏",
+        "date": "2026年4月25日",
+        "location": "南京钟山体育公园",
+        "description": "户外轻运动，在阳光的照耀下感受身心的完全放松。",
+        "highlights": [
+          "筷子夹乒乓球比赛",
+          "团体踢毽子比赛",
+          "闲聊，交换经历",
+          "弹吉他唱歌"
+        ]
+      }
+    },
+    "articles": {
+      "monsoon-desert": [
+        {
+          "type": "paragraph",
+          "content": "这是一场关于季风、沙漠与人的分享。我们会听来自不同文化背景的青年讲述他们的成长、迁徙、饮食与日常生活。"
+        },
+        {
+          "type": "paragraph",
+          "content": "活动希望让大家看到旅行照片之外更真实的世界：那里有普通人的困境、幽默、亲密关系与生活智慧。"
+        }
+      ],
+      "campus-cultural-exchange": [
+        {
+          "type": "paragraph",
+          "content": "这次校内文化交流活动围绕摩洛哥与德国展开。参与者通过历史介绍、语言体验、手工互动和音乐分享，重新认识两个常被标签化的国家。"
+        },
+        {
+          "type": "image",
+          "src": "/pictures/activity1-1.jpg",
+          "caption": "活动现场的文化介绍环节"
+        },
+        {
+          "type": "paragraph",
+          "content": "我们尝试用轻松的方式讨论文化差异，也让来自不同国家的同学在游戏和对话中建立真实连接。"
+        }
+      ],
+      "indoor-english-corner": [
+        {
+          "type": "paragraph",
+          "content": "这次英语角以电影为主题。大家分享自己喜欢的电影、动画和角色，也在轻松的交流中练习英语表达。"
+        },
+        {
+          "type": "image",
+          "src": "/pictures/activity2-1.jpg",
+          "caption": "室内英语角分享现场"
+        }
+      ],
+      "outdoor-group-games": [
+        {
+          "type": "paragraph",
+          "content": "在钟山体育公园，我们组织了一场轻松的户外团体游戏。活动不强调输赢，更希望大家在阳光、草地和笑声中放松下来。"
+        },
+        {
+          "type": "image",
+          "src": "/pictures/activity3-1.jpg",
+          "caption": "户外游戏与交流时刻"
+        },
+        {
+          "type": "paragraph",
+          "content": "游戏结束后，大家围坐聊天、弹吉他唱歌，也分享了各自来到这座城市后的生活经历。"
+        }
+      ]
+    },
+    "testimonials": {
+      "zhang-ming": {
+        "name": "张明",
+        "role": "2024届参与者",
+        "text": "这次活动彻底改变了我对文化交流的理解。在交流和游戏中，我第一次感受到文化不是遥远的知识，而是一个个具体的人和故事。"
+      },
+      "li-yutong": {
+        "name": "李雨桐",
+        "role": "2023届参与者",
+        "text": "活动让我收获了一群来自世界各地的朋友。我们一起聊天、分享食物、讨论电影，也在轻松的氛围里理解了彼此的不同。"
+      }
+    }
+  },
+  "countries": {
+    "sectionEyebrow": "— 探索国家",
+    "titleLine1": "探索世界各地",
+    "titleLine2": "最迷人的国度",
+    "otherCard": {
+      "title": "其它",
+      "subtitle": "探索更多国家"
+    },
+    "modalTitle": "更多国家",
+    "pagination": "第 {{current}} / {{total}} 页",
+    "goToPage": "前往第 {{page}} 页",
+    "items": {
+      "morocco": {
+        "name": "摩洛哥",
+        "description": "从撒哈拉沙漠到蓝色小镇舍夫沙万，摩洛哥是色彩与文化的万花筒。"
+      },
+      "egypt": {
+        "name": "埃及",
+        "description": "金字塔与尼罗河的国度，数千年文明在这里留下了不朽的印记。"
+      },
+      "indonesia": {
+        "name": "印度尼西亚",
+        "description": "万岛之国，从巴厘岛的梯田到科莫多的巨蜥，自然与信仰交织。"
+      },
+      "germany": {
+        "name": "德国",
+        "description": "古堡、啤酒与前沿科技并存，严谨与浪漫在这里完美融合。"
+      },
+      "yemen": {
+        "name": "也门",
+        "description": "阿拉伯半岛的隐秘瑰宝，古老的泥砖高楼与索科特拉岛的奇幻植物令人惊叹。"
+      },
+      "greece": {
+        "name": "希腊",
+        "description": "爱琴海的蓝白世界，西方文明的摇篮。"
+      },
+      "italy": {
+        "name": "意大利",
+        "description": "文艺复兴的故乡，美食与艺术的天堂。"
+      },
+      "spain": {
+        "name": "西班牙",
+        "description": "弗拉门戈与高迪建筑，热情奔放的伊比利亚半岛。"
+      },
+      "turkey": {
+        "name": "土耳其",
+        "description": "横跨欧亚的文明十字路口，热气球与清真寺的浪漫。"
+      },
+      "japan": {
+        "name": "日本",
+        "description": "传统与现代的极致碰撞，樱花与霓虹的国度。"
+      },
+      "thailand": {
+        "name": "泰国",
+        "description": "微笑之国，寺庙、海滩与街头美食的完美组合。"
+      }
+    }
+  },
+  
+  "routeMap": {
+    "items": {
+      "overview": {
+        "label": "国家",
+        "desc": "地理、语言与国家故事"
+      },
+      "cities": {
+        "label": "城市",
+        "desc": "美食、文化与景点"
+      },
+      "thoughts": {
+        "label": "思想碰撞",
+        "desc": "个人经历与社会议题"
+      },
+      "travelGuide": {
+        "label": "旅行攻略",
+        "desc": "国家与城市打包分享"
+      }
+    }
+  },
+  
+  "thoughts": {
+    "eyebrow": "Crossing Thoughts",
+    "title": "思想碰撞",
+    "subtitle": "旅行不只是拍照、抵达和打卡，也是在陌生文化中重新理解自己。",
+    "featured": {
+      "tag": "个人经历",
+      "title": "在巴厘岛的一场清晨仪式旁边",
+      "text": "我原本以为自己只是一个旁观者。直到我意识到，相机举起的瞬间，我与当地人的距离发生了变化。那一刻，旅行不再只是观看，而变成一次关于边界、尊重和理解的学习。"
+    },
+    "discussionTitle": "社会议题交流",
+    "enterDiscussion": "进入讨论 →",
+    "topics": {
+      "cultural-boundary": {
+        "tag": "文化边界",
+        "title": "游客观看仪式，是尊重还是打扰？",
+        "text": "当宗教仪式进入游客镜头，它仍然只是当地人的生活，还是已经变成一种被消费的景观？"
+      },
+      "travel-gaze": {
+        "tag": "旅行凝视",
+        "title": "为什么我们总想寻找“原汁原味”？",
+        "text": "所谓真实文化，可能并不是静止的传统，而是在现代生活中不断变化的关系。"
+      },
+      "urban-life": {
+        "tag": "城市生活",
+        "title": "旅游业让城市更开放，还是更昂贵？",
+        "text": "旅行经济带来收入，也可能改变租金、消费结构和社区节奏。"
+      },
+      "media-impact": {
+        "tag": "媒介影响",
+        "title": "短视频如何重新塑造目的地？",
+        "text": "一个地点可能因为一段视频爆红，也可能因为过度曝光失去原本的生活秩序。"
+      }
+    }
+  },
+  
+  "citiesPage": {
+    "eyebrow": "Cities",
+    "title": "走进城市",
+    "subtitle": "每座城市都是一种生活方式。它们共同组成了印度尼西亚复杂而迷人的文化图景。",
+    "items": {
+      "bali": {
+        "name": "巴厘岛",
+        "description": "海岛、庙宇、仪式与度假文化交织的空间。"
+      },
+      "jakarta": {
+        "name": "雅加达",
+        "description": "现代化都市、商业空间与多元人口的交汇点。"
+      },
+      "yogyakarta": {
+        "name": "日惹",
+        "description": "爪哇文化、传统艺术与古迹记忆的重要城市。"
+      }
+    }
+  },
+   
+  "travelGuide": {
+    "heroImageAlt": "印度尼西亚旅行攻略",
+    "heroEyebrow": "Travel Guide",
+    "heroTitleLine1": "印度尼西亚",
+    "heroTitleLine2": "旅行攻略",
+    "heroSubtitle": "把文化理解、路线规划和实用信息打包收藏。这里先以静态攻略的形式呈现，后续可以继续扩展为可筛选、可收藏、可下载的旅行计划工具。",
+    "actions": {
+      "startPlanning": "开始规划",
+      "saveGuide": "收藏攻略"
+    },
+    "overview": {
+      "destinationType": {
+        "label": "目的地类型",
+        "value": "群岛国家"
+      },
+      "languages": {
+        "label": "常用语言",
+        "value": "印尼语 / 英语"
+      },
+      "themes": {
+        "label": "适合主题",
+        "value": "海岛 / 文化 / 城市"
+      },
+      "travelStyle": {
+        "label": "旅行方式",
+        "value": "自由行 / 深度游"
+      }
+    },
+    "nationalGuide": {
+      "eyebrow": "National Guide",
+      "title": "国家攻略",
+      "description": "这一部分适合作为出发前的总览清单，帮助用户快速了解印度尼西亚旅行中最基础、最容易被忽略的准备内容。",
+      "items": {
+        "entryPreparation": {
+          "title": "入境与出发准备",
+          "text": "整理护照、签证、机票、住宿确认单、保险与常用证件备份，适合作为出发前检查清单。"
+        },
+        "bestSeason": {
+          "title": "最佳旅行季节",
+          "text": "印度尼西亚整体属于热带气候，旅行前可根据雨季、旱季以及目的城市调整路线安排。"
+        },
+        "transportation": {
+          "title": "跨岛与城市交通",
+          "text": "国家由众多岛屿组成，常见移动方式包括飞机、渡轮、包车、摩托车、网约车和城市公共交通。"
+        },
+        "budget": {
+          "title": "预算与消费",
+          "text": "从背包旅行到度假型路线都可以规划。预算需要考虑住宿、跨岛交通、餐饮、门票与当地体验项目。"
+        },
+        "safetyHealth": {
+          "title": "安全与健康",
+          "text": "关注饮食卫生、交通安全、海上活动风险、蚊虫防护和个人财物保管，尽量提前了解当地医疗资源。"
+        },
+        "etiquette": {
+          "title": "文化礼仪",
+          "text": "进入宗教场所时注意着装与拍照礼仪。尊重当地仪式、私人空间和不同地区的宗教习惯。"
+        }
+      }
+    },
+    "cityGuide": {
+      "eyebrow": "City Guide",
+      "title": "城市攻略",
+      "viewCityGuide": "查看城市攻略 →",
+      "items": {
+        "bali": {
+          "city": "巴厘岛",
+          "tags": ["海岛", "庙宇", "度假", "仪式"],
+          "text": "适合海岛度假、寺庙参观、传统舞蹈、梯田漫步和短途文化体验。"
+        },
+        "jakarta": {
+          "city": "雅加达",
+          "tags": ["都市", "商业", "博物馆", "现代生活"],
+          "text": "适合观察现代印尼城市生活、商业空间、历史街区和多元人口流动。"
+        },
+        "yogyakarta": {
+          "city": "日惹",
+          "tags": ["古迹", "艺术", "爪哇文化", "慢旅行"],
+          "text": "适合探索婆罗浮屠、普兰巴南、传统艺术、手工艺和爪哇文化。"
+        }
+      }
+    },
+    "routeIdeas": {
+      "eyebrow": "Route Ideas",
+      "title": "路线建议",
+      "items": {
+        "islandRelax": {
+          "title": "轻松海岛路线",
+          "duration": "5 - 7 天",
+          "text": "以巴厘岛为核心，安排海滩、寺庙、梯田、咖啡馆和一到两次短途自然体验。"
+        },
+        "cultureObservation": {
+          "title": "文化观察路线",
+          "duration": "7 - 10 天",
+          "text": "结合雅加达与日惹，从城市生活、博物馆、古迹和传统艺术中理解印尼的多层文化。"
+        },
+        "islandHopping": {
+          "title": "跨岛探索路线",
+          "duration": "10 天以上",
+          "text": "适合有更多时间的旅行者，可在巴厘岛、爪哇岛和周边岛屿之间安排更丰富的移动体验。"
+        }
+      }
+    },
+    "packingList": {
+      "eyebrow": "Packing List",
+      "title": "打包清单",
+      "items": {
+        "passportCopies": "护照与证件复印件",
+        "adapterPowerBank": "转换插头与移动电源",
+        "lightClothes": "轻便透气衣物",
+        "sunProtection": "防晒用品",
+        "mosquitoRepellent": "驱蚊用品",
+        "medicine": "常用药品",
+        "rainGear": "雨具或轻便雨衣",
+        "templeClothes": "适合寺庙参观的长裤或披肩"
+      }
+    },
+    "toolkit": {
+      "eyebrow": "Travel Toolkit",
+      "title": "后续可扩展的攻略工具",
+      "description": "当前页面可以先作为静态攻略展示。下一阶段可以增加筛选器、收藏功能、城市详情跳转、PDF 下载、路线生成器，甚至按照旅行天数自动组合攻略。",
+      "tools": {
+        "photoSpots": "拍照点位",
+        "foodMap": "美食地图",
+        "culturalEtiquette": "文化礼仪",
+        "downloadGuide": "下载攻略"
+      }
+    }
+  },
+  "cityDetail": {
+    "eyebrow": "City Story",
+    "subtitle": "在城市的街道、食物、仪式与景点之间，观察当地生活如何与旅行者的想象相遇。",
+    "basicInfoTitle": "城市基本信息",
+    "labels": {
+      "localLanguage": "当地语言",
+      "keywords": "城市关键词"
+    },
+    "videoTitle": "视频介绍",
+    "videoNotConfigured": "未配置视频地址",
+    "playVideo": "播放 {{city}} 视频",
+    "videoCoverAlt": "{{city}} 视频封面",
+    "blogTitle": "城市博客",
+    "items": {
+      "bali": {
+        "name": "巴厘岛",
+        "localLanguage": "印度尼西亚语，以及巴厘语等地方语言。",
+        "keywords": "海岛、庙宇、仪式、梯田、度假、传统艺术。",
+        "description": "{{city}} 不只是一个旅行目的地，它也是当地人真实生活的空间。当我们从美食、文化和景点进入这座城市时，看到的不只是风景，还有人与地方长期形成的关系。"
+      },
+      "jakarta": {
+        "name": "雅加达",
+        "localLanguage": "印度尼西亚语，以及爪哇语、巽他语等地方语言。",
+        "keywords": "首都、商业、街区、博物馆、现代生活、多元人口。",
+        "description": "{{city}} 是观察现代印度尼西亚的重要入口。高楼、商场、老城、市场与社区生活交织在一起，让旅行者看到国家在城市化进程中的复杂面貌。"
+      },
+      "yogyakarta": {
+        "name": "日惹",
+        "localLanguage": "印度尼西亚语，以及爪哇语等地方语言。",
+        "keywords": "古迹、艺术、爪哇文化、手工艺、慢旅行、大学城。",
+        "description": "{{city}} 保留着浓厚的爪哇文化气质。这里的古迹、手工艺、街头艺术与日常生活相互交织，适合慢慢观察文化如何延续到今天。"
+      }
+    },
+    "blogs": {
+      "food": {
+        "tag": "美食",
+        "title": "从一顿当地餐开始理解城市",
+        "text": "香料、米饭、街边小店与家庭味道，共同构成旅行中的味觉记忆。"
+      },
+      "culture": {
+        "tag": "文化",
+        "title": "仪式感不是表演，而是生活",
+        "text": "在庙宇、街区和家庭空间中，观察文化如何进入日常生活。"
+      },
+      "places": {
+        "tag": "景点",
+        "title": "风景背后的城市故事",
+        "text": "景点不只是打卡地点，它们也是历史、信仰和地方记忆的入口。"
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
