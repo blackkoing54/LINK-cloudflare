@@ -1,8 +1,11 @@
 // ============================================
-// 🌏 印度尼西亚国家专题数据
+// 🌏 印度尼西亚国家专题总数据
 // ============================================
 
 export const indonesiaOverview = {
+  // ----------------------------------------
+  // 1. 基础概览数据 (Overview Page)
+  // ----------------------------------------
   name: '印度尼西亚',
   englishName: 'Indonesia',
 
@@ -14,11 +17,11 @@ export const indonesiaOverview = {
   },
 
   location: {
-  short: '东南亚 · 赤道群岛国家',
-  detail: '位于东南亚与大洋洲之间，由 17000 多个岛屿组成，横跨赤道，西邻印度洋，东接太平洋。',
-  coordinates: [118.0, -2.5] as [number, number], // 👈 注意：高德是 [lng, lat]
-  zoom: 3.8,
-},
+    short: '东南亚 · 赤道群岛国家',
+    detail: '位于东南亚与大洋洲之间，由 17000 多个岛屿组成，横跨赤道，西邻印度洋，东接太平洋。',
+    coordinates: [118.0, -2.5],
+    zoom: 3.8,
+  },
 
   visa: {
     short: '落地签 / 电子落地签（B1）',
@@ -31,8 +34,7 @@ export const indonesiaOverview = {
       { label: '护照', value: '有效期不少于 6 个月，至少一页空白页' },
       { label: '建议', value: '提前办理电子落地签（e-VOA）可节省入境排队时间' },
     ],
-    note:
-      '签证政策可能随时调整，出行前请以印度尼西亚驻华使领馆或官方移民局最新公告为准。',
+    note: '签证政策可能随时调整，出行前请以印度尼西亚驻华使领馆或官方移民局最新公告为准。',
   },
 
   language: {
@@ -52,15 +54,11 @@ export const indonesiaOverview = {
     ],
   },
 
-  intro:
-    '印度尼西亚不是一块单一的陆地，而是一片由海洋连接的群岛。从城市港口到火山村落，从清真寺到印度教庙宇，它的文化在迁徙、贸易、殖民历史和现代城市化中不断生成。不同岛屿拥有差异明显的语言、宗教和生活方式，使这个国家呈现出强烈的文化层次感。',
+  intro: '印度尼西亚不是一块单一的陆地，而是一片由海洋连接的群岛。从城市港口到火山村落，从清真寺到印度教庙宇，它的文化在迁徙、贸易、殖民历史和现代城市化中不断生成。不同岛屿拥有差异明显的语言、宗教和生活方式，使这个国家呈现出强烈的文化层次感。',
 
   video: {
     cover: 'https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=1600',
-    // 本地视频（推荐，国内可访问）：放在 public/videos/ 下
     src: '/videos/indonesia-intro.mp4',
-    // 如需用 Bilibili 替代，可以改用 embed 字段并在组件里渲染 iframe
-    // embed: '//player.bilibili.com/player.html?bvid=BVxxxx&page=1',
     duration: '约 4 分 30 秒',
   },
 
@@ -102,13 +100,78 @@ export const indonesiaOverview = {
       ],
     },
   ],
+
+  // ----------------------------------------
+  // 2. 城市页面数据 (Cities Page)
+  // ----------------------------------------
+  cities: [
+    {
+      id: 'bali',
+      slug: 'bali',
+      image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=900',
+    },
+    {
+      id: 'jakarta',
+      slug: 'jakarta',
+      image: 'https://images.unsplash.com/photo-1555899434-94d1368aa7af?w=900',
+    },
+    {
+      id: 'yogyakarta',
+      slug: 'yogyakarta',
+      image: 'https://images.unsplash.com/photo-1584810359583-96fc3448beaa?w=900',
+    },
+  ],
+
+  // ----------------------------------------
+  // 3. 思想碰撞页面数据 (Thoughts Page)
+  // ----------------------------------------
+  thoughts: {
+    featured: {
+      tag: '深度探讨',
+      title: '千岛之国的文化边界在哪里？',
+      text: '在一个由17000多个岛屿组成的国家里，是什么将几百个不同的民族维系在一起？是语言、信仰，还是共同的海洋记忆？',
+    },
+    topics: [
+      { id: 'cultural-boundary' },
+      { id: 'travel-gaze' },
+      { id: 'urban-life' },
+      { id: 'media-impact' },
+    ],
+  },
+
+  // ----------------------------------------
+  // 4. 旅行攻略页面数据 (Travel Guide Page)
+  // ----------------------------------------
+  travelGuide: {
+    heroImage: 'https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?w=1800',
+    cityGuides: [
+      {
+        id: 'bali',
+        image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=900',
+      },
+      {
+        id: 'jakarta',
+        image: 'https://images.unsplash.com/photo-1555899434-94d1368aa7af?w=900',
+      },
+      {
+        id: 'yogyakarta',
+        image: 'https://images.unsplash.com/photo-1584810359583-96fc3448beaa?w=900',
+      },
+    ],
+    packingList: [
+      'passportCopies',
+      'adapterPowerBank',
+      'lightClothes',
+      'sunProtection',
+      'mosquitoRepellent',
+      'medicine',
+      'rainGear',
+      'templeClothes',
+    ],
+    routeIdeas: [
+      { id: 'islandRelax' },
+      { id: 'cultureObservation' },
+      { id: 'islandHopping' },
+    ],
+  },
 };
-
-// ============================================
-// 类型导出（方便组件使用）
-// ============================================
-
-export type CountryOverviewData = typeof indonesiaOverview;
-export type GalleryCategory = (typeof indonesiaOverview.gallery)[number];
-export type VisaPoint = (typeof indonesiaOverview.visa.points)[number];
-export type Phrase = (typeof indonesiaOverview.language.phrases)[number];

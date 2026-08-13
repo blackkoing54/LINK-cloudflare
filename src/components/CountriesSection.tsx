@@ -6,8 +6,6 @@ import { ArrowUpRight, X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 // ============================================
 // 🌍 主要国家结构数据
-// 这里只保留：id、slug、image
-// 文案全部放到 zh.json / en.json
 // ============================================
 
 type MainCountry = {
@@ -28,9 +26,9 @@ const mainCountries: MainCountry[] = [
     image: 'https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?w=800',
   },
   {
-    id: 'egypt',
-    slug: 'egypt',
-    image: 'https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?w=800',
+    id: 'azerbaijan', // 👈 替换了埃及
+    slug: 'azerbaijan',
+    image: 'https://images.unsplash.com/photo-1627318712361-9c6bc76db7db?w=800', // 暂时的阿塞拜疆占位图
   },
   {
     id: 'indonesia',
@@ -43,9 +41,9 @@ const mainCountries: MainCountry[] = [
     image: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=800',
   },
   {
-    id: 'yemen',
-    slug: 'yemen',
-    image: 'https://images.unsplash.com/photo-1578895101408-1a36b834405b?w=800',
+    id: 'georgia', // 👈 替换了也门
+    slug: 'georgia',
+    image: 'https://images.unsplash.com/photo-1565019013583-058b29df99da?w=800', // 暂时的格鲁吉亚占位图
   },
 ];
 
@@ -95,20 +93,20 @@ export const CountriesSection = () => {
     otherPage * perPage + perPage,
   );
 
+  // 这里增加了回退文本，防止你还没配好多语言JSON时页面显示成尴尬的英文 key
   const getCountryName = (id: string) => {
-    return t(`countries.items.${id}.name`);
+    const fallbackName = id === 'azerbaijan' ? '阿塞拜疆' : id === 'georgia' ? '格鲁吉亚' : id;
+    return t(`countries.items.${id}.name`, fallbackName);
   };
 
   const getCountryDescription = (id: string) => {
-    return t(`countries.items.${id}.description`);
+    const fallbackDesc = id === 'azerbaijan' ? '火之国度的光影交错' : id === 'georgia' ? '高加索秘境的雪山与红酒' : '';
+    return t(`countries.items.${id}.description`, fallbackDesc);
   };
 
   const handleMainCountryClick = (country: MainCountry) => {
-    // 目前你的路由里只有 indonesia 相关页面完整可用
-    // 如果之后其它国家页面也做好了，可以直接改成 navigate(`/country/${country.slug}`)
-    if (country.slug === 'indonesia') {
-      navigate('/country/indonesia');
-    }
+    // 👈 关键修改：不再写死判断 indonesia，而是让所有卡片都能被点击，由路由统一拦截
+    navigate(`/country/${country.slug}`);
   };
 
   return (

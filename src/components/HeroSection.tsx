@@ -22,7 +22,7 @@ export const HeroSection = () => {
       </video>
 
       {/* ---------- 2. 半透明黑色遮罩层 ---------- */}
-      <div className="absolute inset-0 bg-black/15 z-10" />
+      <div className="absolute inset-0 bg-black/10 z-10" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/40 z-10" />
 
       {/* ---------- 3. 主要文字内容区 ---------- */}

@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import {
   ArrowLeft,
   MapPin,
@@ -16,8 +16,16 @@ import {
 import { motion, AnimatePresence } from 'framer-motion';
 
 import AmapView from '../components/AmapView';
-import { indonesiaOverview } from '../data/indonesia';
+import NotAvailable from '../components/NotAvailable';
 
+// 导入所有国家数据
+import { indonesiaOverview } from '../data/indonesia';
+import { azerbaijanOverview } from '../data/azerbaijan';
+import { georgiaOverview } from '../data/georgia';
+
+// ============================================
+// 恢复原本完整的类型定义
+// ============================================
 type ModalKey = 'location' | 'visa' | 'language' | null;
 
 type GalleryCategory = {
@@ -40,47 +48,45 @@ type Phrase = {
 type CountryOverviewData = {
   name: string;
   englishName: string;
-
   hero?: {
     image: string;
     eyebrow?: string;
     title?: string;
     subtitle?: string;
   };
-
   location: {
     short: string;
     detail: string;
-    coordinates: [number, number]; // 高德地图使用 [lng, lat]，即 [经度, 纬度]
+    coordinates: [number, number];
     zoom: number;
   };
-
   visa: {
     short: string;
     badge: string;
     points: VisaPoint[];
     note: string;
   };
-
   language: {
     short: string;
     speechLang?: string;
     phrases: Phrase[];
   };
-
   intro: string;
-
   video: {
     cover: string;
     duration: string;
     src?: string;
     embed?: string;
   };
-
   gallery: GalleryCategory[];
 };
 
-const data = indonesiaOverview as unknown as CountryOverviewData;
+// 数据字典映射
+const countryDataMap: Record<string, any> = {
+  indonesia: indonesiaOverview,
+  azerbaijan: azerbaijanOverview,
+  georgia: georgiaOverview,
+};
 
 const visaPointKeyOrder = ['scope', 'duration', 'fee', 'port', 'passport', 'tip'];
 
@@ -98,49 +104,56 @@ const phraseKeyOrder = [
 ];
 
 const CountryOverviewPage = () => {
+  const { countrySlug } = useParams();
   const navigate = useNavigate();
   const { t } = useTranslation();
+  
+  const currentSlug = countrySlug || 'indonesia';
+  // 在这里统一转换为完整的类型，完美避开 ts 推导错误
+  const data = countryDataMap[currentSlug] as unknown as CountryOverviewData;
 
-  const tt = (key: string, fallback: string) => t(key, fallback);
+  const tt = (key: string, fallback?: string) => (fallback ? t(key, { defaultValue: fallback }) : t(key)) as string;
 
   const [activeModal, setActiveModal] = useState<ModalKey>(null);
   const [videoPlaying, setVideoPlaying] = useState(false);
   const [lightboxImage, setLightboxImage] = useState<string | null>(null);
 
-  const [activeCategory, setActiveCategory] = useState<string>(
-    data.gallery?.[0]?.key ?? 'culture',
-  );
+  const [activeCategory, setActiveCategory] = useState<string>('culture');
+
+  useEffect(() => {
+    if (data?.gallery?.[0]?.key) {
+      setActiveCategory(data.gallery[0].key);
+    }
+  }, [data]);
 
   const currentCategory = useMemo(() => {
+    if (!data) return null;
     const found = data.gallery?.find((c) => c.key === activeCategory);
     return found ?? data.gallery?.[0];
-  }, [activeCategory]);
+  }, [activeCategory, data]);
 
   const translatedVisaPoints = useMemo(() => {
+    if (!data) return [];
     return data.visa.points.map((point, index) => {
       const key = visaPointKeyOrder[index];
-
-      if (!key) {
-        return point;
-      }
-
+      if (!key) return point;
       return {
-        label: tt(`indonesia.visaPoints.${key}Label`, point.label),
-        value: tt(`indonesia.visaPoints.${key}Value`, point.value),
+        label: tt(`${currentSlug}.visaPoints.${key}Label`, point.label),
+        value: tt(`${currentSlug}.visaPoints.${key}Value`, point.value),
       };
     });
-  }, [t]);
+  }, [data, currentSlug]);
 
   const translatedPhrases = useMemo(() => {
+    if (!data) return [];
     return data.language.phrases.map((phrase, index) => {
       const key = phrase.key ?? phraseKeyOrder[index];
-
       return {
         ...phrase,
-        zh: key ? tt(`indonesia.phrases.${key}`, phrase.zh) : phrase.zh,
+        zh: key ? tt(`${currentSlug}.phrases.${key}`, phrase.zh) : phrase.zh,
       };
     });
-  }, [t]);
+  }, [data, currentSlug]);
 
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
@@ -149,46 +162,34 @@ const CountryOverviewPage = () => {
         setLightboxImage(null);
       }
     };
-
     window.addEventListener('keydown', handleKey);
     return () => window.removeEventListener('keydown', handleKey);
   }, []);
 
-  const heroImage =
-    data.hero?.image ??
-    'https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=1800';
+  if (!data) {
+    return <NotAvailable />;
+  }
 
-  const heroEyebrow = tt(
-    'overview-Indonisia.heroEyebrow',
-    data.hero?.eyebrow ?? 'Country Overview',
-  );
+  const heroImage = data.hero?.image ?? 'https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=1800';
+  const heroEyebrow = tt(`overview-${currentSlug}.heroEyebrow`, data.hero?.eyebrow ?? 'Country Overview');
+  const heroTitle = tt(`overview-${currentSlug}.title`, data.hero?.title ?? '国家印象');
+  const heroSubtitle = tt(`overview-${currentSlug}.subtitle`, data.hero?.subtitle ?? data.intro);
 
-  const heroTitle = tt(
-    'overview-Indonisia.title',
-    data.hero?.title ?? '国家印象',
-  );
-
-  const heroSubtitle = tt(
-    'overview-Indonisia.subtitle',
-    data.hero?.subtitle ??
-      '在火山、海岛、庙宇与市井烟火之间，阅读一个由千岛组成的文化世界。',
-  );
-
-  const countryName = tt('indonesia.name', data.name);
-  const countryEnglishName = tt('indonesia.englishName', data.englishName);
-  const locationShort = tt('indonesia.locationShort', data.location.short);
-  const locationDetail = tt('indonesia.locationDetail', data.location.detail);
-  const visaBadge = tt('indonesia.visaBadge', data.visa.badge);
-  const visaShort = tt('indonesia.visaShort', data.visa.short);
-  const visaNote = tt('indonesia.visaNote', data.visa.note);
-  const languageShort = tt('indonesia.languageShort', data.language.short);
-  const intro = tt('indonesia.intro', data.intro);
-  const videoDuration = tt('indonesia.videoDuration', data.video.duration);
+  const countryName = tt(`${currentSlug}.name`, data.name);
+  const countryEnglishName = tt(`${currentSlug}.englishName`, data.englishName);
+  const locationShort = tt(`${currentSlug}.locationShort`, data.location.short);
+  const locationDetail = tt(`${currentSlug}.locationDetail`, data.location.detail);
+  const visaBadge = tt(`${currentSlug}.visaBadge`, data.visa.badge);
+  const visaShort = tt(`${currentSlug}.visaShort`, data.visa.short);
+  const visaNote = tt(`${currentSlug}.visaNote`, data.visa.note);
+  const languageShort = tt(`${currentSlug}.languageShort`, data.language.short);
+  const intro = tt(`${currentSlug}.intro`, data.intro);
+  const videoDuration = tt(`${currentSlug}.videoDuration`, data.video.duration);
 
   return (
     <main className="min-h-screen bg-black text-primary">
       <button
-        onClick={() => navigate('/country/indonesia')}
+        onClick={() => navigate(`/country/${currentSlug}`)}
         className="fixed top-8 left-8 z-40 w-12 h-12 rounded-full bg-black/45 backdrop-blur-xl border border-white/10 flex items-center justify-center hover:bg-white/[0.08] transition-colors"
         aria-label={`${tt('common.back', '返回')} ${countryName}`}
       >
@@ -228,26 +229,25 @@ const CountryOverviewPage = () => {
 
       {/* 基本信息 + 简介 */}
       <section className="px-8 md:px-16 py-24 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-8">
-        {/* 基本信息卡 */}
         <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] backdrop-blur-xl p-8 md:p-10">
           <p className="text-primary/40 text-sm tracking-[0.25em] uppercase mb-3">
-            {tt('overview-Indonisia.basicInfoEyebrow', 'Basic Info')}
+            {tt(`overview-${currentSlug}.basicInfoEyebrow`, 'Basic Info')}
           </p>
 
           <h2 className="text-3xl md:text-4xl font-bold mb-8">
-            {tt('overview-Indonisia.basicInfo', '国家基本信息')}
+            {tt(`overview-${currentSlug}.basicInfo`, '国家基本信息')}
           </h2>
 
           <div className="space-y-2">
             <StaticRow
-              label={tt('overview-Indonisia.labels.name', '国家名称')}
+              label={tt(`overview-${currentSlug}.labels.name`, '国家名称')}
               value={countryName}
               hint={countryEnglishName}
             />
 
             <InteractiveRow
               icon={MapPin}
-              label={tt('overview-Indonisia.labels.location', '地理位置')}
+              label={tt(`overview-${currentSlug}.labels.location`, '地理位置')}
               value={locationShort}
               action={tt('common.viewMap', '查看地图')}
               onClick={() => setActiveModal('location')}
@@ -255,7 +255,7 @@ const CountryOverviewPage = () => {
 
             <InteractiveRow
               icon={FileCheck2}
-              label={tt('overview-Indonisia.labels.visa', '签证要求')}
+              label={tt(`overview-${currentSlug}.labels.visa`, '签证要求')}
               badge={visaBadge}
               value={visaShort}
               action={tt('common.viewVisa', '查看签证说明')}
@@ -264,7 +264,7 @@ const CountryOverviewPage = () => {
 
             <InteractiveRow
               icon={Languages}
-              label={tt('overview-Indonisia.labels.language', '官方语言')}
+              label={tt(`overview-${currentSlug}.labels.language`, '官方语言')}
               value={languageShort}
               action={tt('common.listenPhrases', '听听常用语')}
               onClick={() => setActiveModal('language')}
@@ -272,14 +272,13 @@ const CountryOverviewPage = () => {
           </div>
         </div>
 
-        {/* 简介卡 */}
         <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] backdrop-blur-xl p-8 md:p-10 flex flex-col">
           <p className="text-primary/40 text-sm tracking-[0.25em] uppercase mb-3">
-            {tt('overview-Indonisia.aboutEyebrow', 'About')}
+            {tt(`overview-${currentSlug}.aboutEyebrow`, 'About')}
           </p>
 
           <h2 className="text-3xl md:text-4xl font-bold mb-8">
-            {tt('overview-Indonisia.about', '国家简介')}
+            {tt(`overview-${currentSlug}.about`, '国家简介')}
           </h2>
 
           <p className="text-primary/60 leading-loose text-lg">{intro}</p>
@@ -291,11 +290,11 @@ const CountryOverviewPage = () => {
         <div className="flex items-end justify-between flex-wrap gap-4 mb-8">
           <div>
             <p className="text-primary/40 text-sm tracking-[0.25em] uppercase mb-3">
-              {tt('overview-Indonisia.videoEyebrow', 'Video')}
+              {tt(`overview-${currentSlug}.videoEyebrow`, 'Video')}
             </p>
 
             <h2 className="text-3xl md:text-5xl font-bold">
-              {tt('overview-Indonisia.video', '视频介绍')}
+              {tt(`overview-${currentSlug}.video`, '视频介绍')}
             </h2>
           </div>
 
@@ -314,7 +313,7 @@ const CountryOverviewPage = () => {
                 preload="metadata"
                 className="w-full h-full object-cover"
               >
-                {tt('common-Indonisia.unsupportedVideo', '您的浏览器不支持视频播放。')}
+                {tt(`common-${currentSlug}.unsupportedVideo`, '您的浏览器不支持视频播放。')}
               </video>
             ) : data.video.embed ? (
               <iframe
@@ -360,18 +359,17 @@ const CountryOverviewPage = () => {
       <section className="px-8 md:px-16 pb-28 max-w-7xl mx-auto">
         <div className="mb-8">
           <p className="text-primary/40 text-sm tracking-[0.25em] uppercase mb-3">
-            {tt('overview-Indonisia.galleryEyebrow', 'Gallery')}
+            {tt(`overview-${currentSlug}.galleryEyebrow`, 'Gallery')}
           </p>
 
           <h2 className="text-3xl md:text-5xl font-bold">
-            {tt('overview-Indonisia.gallery', '图片展示')}
+            {tt(`overview-${currentSlug}.gallery`, '图片展示')}
           </h2>
         </div>
 
         <div className="flex flex-wrap gap-3 mb-8">
           {data.gallery.map((c) => {
             const isActive = c.key === activeCategory;
-
             return (
               <button
                 key={c.key}
@@ -382,7 +380,7 @@ const CountryOverviewPage = () => {
                     : 'bg-white/[0.04] text-primary/65 border-white/10 hover:bg-white/[0.08]'
                 }`}
               >
-                {tt(`overview-Indonisia.categories-Indonisia.${c.key}`, c.label)}
+                {tt(`overview-${currentSlug}.categories-${currentSlug}.${c.key}`, c.label)}
               </button>
             );
           })}
@@ -404,19 +402,16 @@ const CountryOverviewPage = () => {
               >
                 <img
                   src={src}
-                  alt={`${tt(`overview-Indonisia.categories.${currentCategory.key}`, currentCategory.label)} ${
-                    i + 1
-                  }`}
+                  alt={`${tt(`overview-${currentSlug}.categories.${currentCategory.key}`, currentCategory.label)} ${i + 1}`}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-
                 <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors" />
               </button>
             ))}
           </motion.div>
         ) : (
           <div className="text-primary/60">
-            {tt('overview-Indonisia.empty.gallery', '未配置 gallery 分类数据')}
+            {tt(`overview-${currentSlug}.empty.gallery`, '未配置 gallery 分类数据')}
           </div>
         )}
       </section>
@@ -424,9 +419,9 @@ const CountryOverviewPage = () => {
       <AnimatePresence>
         {activeModal === 'location' && (
           <LocationModal
-            eyebrow={tt('overview-Indonisia.locationEyebrow', 'Location')}
+            eyebrow={tt(`overview-${currentSlug}.locationEyebrow`, 'Location')}
             title={countryName}
-            titleSuffix={tt('overview-Indonisia.labels.location', '地理位置')}
+            titleSuffix={tt(`overview-${currentSlug}.labels.location`, '地理位置')}
             detail={locationDetail}
             coordinates={data.location.coordinates}
             zoom={data.location.zoom}
@@ -438,8 +433,8 @@ const CountryOverviewPage = () => {
 
         {activeModal === 'visa' && (
           <VisaModal
-            eyebrow={tt('overview-Indonisia.visaEyebrow', 'Visa')}
-            title={tt('overview-Indonisia.labels.visa', '签证要求')}
+            eyebrow={tt(`overview-${currentSlug}.visaEyebrow`, 'Visa')}
+            title={tt(`overview-${currentSlug}.labels.visa`, '签证要求')}
             badge={visaBadge}
             shortText={visaShort}
             points={translatedVisaPoints}
@@ -451,17 +446,17 @@ const CountryOverviewPage = () => {
 
         {activeModal === 'language' && (
           <LanguageModal
-            eyebrow={tt('overview-Indonisia.languageEyebrow', 'Language')}
+            eyebrow={tt(`overview-${currentSlug}.languageEyebrow`, 'Language')}
             title={languageShort}
             phrases={translatedPhrases}
-            speechLang={data.language.speechLang ?? 'id-ID'}
+            speechLang={data.language.speechLang ?? 'en-US'}
             hint={tt(
               'languageModal.hint',
-              '点击右侧喇叭图标，即可听到印尼语发音。发音由浏览器内置语音合成提供，仅供参考。',
+              '点击右侧喇叭图标，即可听到发音。发音由浏览器内置语音合成提供，仅供参考。'
             )}
             unsupportedSpeechText={tt(
               'languageModal.unsupportedSpeech',
-              '当前浏览器不支持语音播放',
+              '当前浏览器不支持语音播放'
             )}
             playLabel={tt('common.play', '播放')}
             closeLabel={tt('common.close', '关闭')}
@@ -486,10 +481,6 @@ const CountryOverviewPage = () => {
   );
 };
 
-// ============================================
-// 子组件：信息行
-// ============================================
-
 interface StaticRowProps {
   label: string;
   value: string;
@@ -500,7 +491,6 @@ const StaticRow = ({ label, value, hint }: StaticRowProps) => {
   return (
     <div className="flex items-center justify-between gap-6 py-4 border-b border-white/10">
       <span className="text-primary/40">{label}</span>
-
       <div className="text-right">
         <strong className="block text-primary/85 font-medium">{value}</strong>
         {hint && <span className="text-primary/35 text-xs mt-1 block">{hint}</span>}
@@ -534,21 +524,17 @@ const InteractiveRow = ({
       <span className="w-10 h-10 shrink-0 rounded-xl bg-white/[0.05] border border-white/10 flex items-center justify-center group-hover:bg-primary/10 group-hover:border-primary/30 transition-colors">
         <Icon className="w-4 h-4 text-primary/70" strokeWidth={1.8} />
       </span>
-
       <div className="flex-1 min-w-0">
         <div className="flex items-center gap-2 mb-1">
           <span className="text-primary/40 text-sm">{label}</span>
-
           {badge && (
             <span className="px-2 py-0.5 rounded-full bg-primary/10 border border-primary/20 text-primary/70 text-[11px]">
               {badge}
             </span>
           )}
         </div>
-
         <strong className="block text-primary/85 font-medium truncate">{value}</strong>
       </div>
-
       <span className="shrink-0 flex items-center gap-1 text-primary/45 text-sm group-hover:text-primary/80 transition-colors">
         {action}
         <ArrowIcon className="w-4 h-4" />
@@ -556,10 +542,6 @@ const InteractiveRow = ({
     </button>
   );
 };
-
-// ============================================
-// 子组件：通用弹窗外壳
-// ============================================
 
 interface ModalShellProps {
   onClose: () => void;
@@ -584,7 +566,6 @@ const ModalShell = ({
       onClick={onClose}
     >
       <div className="absolute inset-0 bg-black/80 backdrop-blur-md" />
-
       <motion.div
         initial={{ opacity: 0, y: 30, scale: 0.96 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -600,16 +581,11 @@ const ModalShell = ({
         >
           <X className="w-4 h-4 text-primary" />
         </button>
-
         {children}
       </motion.div>
     </motion.div>
   );
 };
-
-// ============================================
-// 子组件：地图弹窗
-// ============================================
 
 interface LocationModalProps {
   eyebrow: string;
@@ -639,13 +615,10 @@ const LocationModal = ({
       <p className="text-primary/40 text-sm tracking-[0.25em] uppercase mb-3">
         {eyebrow}
       </p>
-
       <h3 className="text-3xl md:text-4xl font-bold mb-4">
         {title} {titleSuffix}
       </h3>
-
       <p className="text-primary/55 leading-relaxed mb-8 max-w-3xl">{detail}</p>
-
       <div className="aspect-[16/10] min-h-[400px] rounded-2xl overflow-hidden border border-white/10 bg-white/[0.03]">
         <AmapView
           center={coordinates}
@@ -657,10 +630,6 @@ const LocationModal = ({
     </ModalShell>
   );
 };
-
-// ============================================
-// 子组件：签证弹窗
-// ============================================
 
 interface VisaModalProps {
   eyebrow: string;
@@ -689,16 +658,12 @@ const VisaModal = ({
         <p className="text-primary/40 text-sm tracking-[0.25em] uppercase">
           {eyebrow}
         </p>
-
         <span className="px-2.5 py-0.5 rounded-full bg-primary/10 border border-primary/20 text-primary/70 text-xs">
           {badge}
         </span>
       </div>
-
       <h3 className="text-3xl md:text-4xl font-bold mb-3">{title}</h3>
-
       <p className="text-primary/70 text-lg mb-8">{shortText}</p>
-
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-8">
         {points.map((p) => (
           <div
@@ -710,15 +675,10 @@ const VisaModal = ({
           </div>
         ))}
       </div>
-
       <p className="text-primary/35 text-xs leading-relaxed">{note}</p>
     </ModalShell>
   );
 };
-
-// ============================================
-// 子组件：语言弹窗
-// ============================================
 
 interface LanguageModalProps {
   eyebrow: string;
@@ -750,16 +710,12 @@ const LanguageModal = ({
       alert(unsupportedSpeechText);
       return;
     }
-
     window.speechSynthesis.cancel();
-
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.lang = speechLang;
     utterance.rate = 0.9;
-
     utterance.onend = () => setPlayingIndex(null);
     utterance.onerror = () => setPlayingIndex(null);
-
     setPlayingIndex(index);
     window.speechSynthesis.speak(utterance);
   };
@@ -777,15 +733,11 @@ const LanguageModal = ({
       <p className="text-primary/40 text-sm tracking-[0.25em] uppercase mb-3">
         {eyebrow}
       </p>
-
       <h3 className="text-3xl md:text-4xl font-bold mb-3">{title}</h3>
-
       <p className="text-primary/50 leading-relaxed mb-8">{hint}</p>
-
       <div className="space-y-3">
         {phrases.map((item, index) => {
           const isPlaying = playingIndex === index;
-
           return (
             <div
               key={`${item.zh}-${item.local}`}
@@ -795,7 +747,6 @@ const LanguageModal = ({
                 <p className="text-primary/40 text-xs mb-1">{item.zh}</p>
                 <p className="text-primary/85 text-lg">{item.local}</p>
               </div>
-
               <button
                 onClick={() => speak(item.local, index)}
                 className={`shrink-0 w-11 h-11 rounded-full flex items-center justify-center border transition-colors ${
@@ -814,10 +765,6 @@ const LanguageModal = ({
     </ModalShell>
   );
 };
-
-// ============================================
-// 子组件：图片放大
-// ============================================
 
 interface LightboxProps {
   image: string;
@@ -860,17 +807,14 @@ const Lightbox = ({
         const i = (currentIndex - 1 + images.length) % images.length;
         onChange(images[i]);
       }
-
       if (e.key === 'ArrowRight') {
         const i = (currentIndex + 1) % images.length;
         onChange(images[i]);
       }
-
       if (e.key === 'Escape') {
         onClose();
       }
     };
-
     window.addEventListener('keydown', handleKey);
     return () => window.removeEventListener('keydown', handleKey);
   }, [currentIndex, images, onChange, onClose]);
@@ -884,7 +828,6 @@ const Lightbox = ({
       onClick={onClose}
     >
       <div className="absolute inset-0 bg-black/92 backdrop-blur-xl" />
-
       <button
         onClick={onClose}
         className="absolute top-6 right-6 z-20 w-11 h-11 rounded-full bg-white/[0.06] border border-white/10 flex items-center justify-center hover:bg-white/[0.12] transition-colors"
@@ -892,7 +835,6 @@ const Lightbox = ({
       >
         <X className="w-5 h-5 text-primary" />
       </button>
-
       {images.length > 1 && (
         <>
           <button
@@ -902,7 +844,6 @@ const Lightbox = ({
           >
             <ChevronLeft className="w-5 h-5 text-primary" />
           </button>
-
           <button
             onClick={goNext}
             className="absolute right-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/[0.06] border border-white/10 flex items-center justify-center hover:bg-white/[0.12] transition-colors"
@@ -912,7 +853,6 @@ const Lightbox = ({
           </button>
         </>
       )}
-
       <motion.img
         key={image}
         initial={{ opacity: 0, scale: 0.96 }}
@@ -923,7 +863,6 @@ const Lightbox = ({
         onClick={(e) => e.stopPropagation()}
         className="relative z-10 max-w-[92vw] max-h-[88vh] object-contain rounded-2xl shadow-2xl"
       />
-
       {images.length > 1 && (
         <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 text-primary/50 text-sm">
           {currentIndex + 1} / {images.length}
